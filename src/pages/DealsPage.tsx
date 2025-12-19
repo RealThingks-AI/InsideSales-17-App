@@ -395,9 +395,9 @@ const DealsPage = () => {
 
               <Button 
                 variant="outline"
+                size="sm"
                 onClick={() => handleCreateDeal('Lead')}
               >
-                <Plus className="w-4 h-4 mr-2" />
                 Add Deal
               </Button>
             </div>

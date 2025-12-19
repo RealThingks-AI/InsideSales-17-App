@@ -59,9 +59,8 @@ export const DealsSettingsDropdown = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <Settings className="w-4 h-4 mr-2" />
-          Action
+        <Button variant="outline" size="sm">
+          Actions
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-popover border z-50">

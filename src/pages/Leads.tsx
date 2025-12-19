@@ -93,9 +93,8 @@ const Leads = () => {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline">
-                <MoreVertical className="w-4 h-4 mr-2" />
-                Action
+              <Button variant="outline" size="sm">
+                Actions
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48">
@@ -118,8 +117,7 @@ const Leads = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="outline" onClick={() => setShowModal(true)}>
-            <Plus className="w-4 h-4 mr-2" />
+          <Button variant="outline" size="sm" onClick={() => setShowModal(true)}>
             Add Lead
           </Button>
             </div>
