@@ -112,8 +112,9 @@ const Contacts = () => {
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" disabled={isImporting}>
-                <MoreVertical className="w-4 h-4" />
+              <Button variant="outline" disabled={isImporting}>
+                <MoreVertical className="w-4 h-4 mr-2" />
+                Action
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

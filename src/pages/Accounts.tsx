@@ -91,8 +91,9 @@ const Accounts = () => {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <MoreVertical className="w-4 h-4" />
+              <Button variant="outline">
+                <MoreVertical className="w-4 h-4 mr-2" />
+                Action
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48">
