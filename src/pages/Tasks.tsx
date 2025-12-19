@@ -92,28 +92,27 @@ const Tasks = () => {
             </div>
             <div className="flex items-center gap-3">
               <Tabs value={viewMode} onValueChange={(v) => setViewMode(v as ViewMode)}>
-                <TabsList>
-                  <TabsTrigger value="list" className="flex items-center gap-1">
-                    <List className="h-4 w-4" />
+                <TabsList className="h-9">
+                  <TabsTrigger value="list" className="flex items-center gap-1.5 text-xs px-2.5 h-8">
+                    <List className="h-3.5 w-3.5" />
                     <span className="hidden sm:inline">List</span>
                   </TabsTrigger>
-                  <TabsTrigger value="kanban" className="flex items-center gap-1">
-                    <LayoutGrid className="h-4 w-4" />
+                  <TabsTrigger value="kanban" className="flex items-center gap-1.5 text-xs px-2.5 h-8">
+                    <LayoutGrid className="h-3.5 w-3.5" />
                     <span className="hidden sm:inline">Kanban</span>
                   </TabsTrigger>
-                  <TabsTrigger value="calendar" className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
+                  <TabsTrigger value="calendar" className="flex items-center gap-1.5 text-xs px-2.5 h-8">
+                    <Calendar className="h-3.5 w-3.5" />
                     <span className="hidden sm:inline">Calendar</span>
                   </TabsTrigger>
-                  <TabsTrigger value="analytics" className="flex items-center gap-1">
-                    <BarChart3 className="h-4 w-4" />
+                  <TabsTrigger value="analytics" className="flex items-center gap-1.5 text-xs px-2.5 h-8">
+                    <BarChart3 className="h-3.5 w-3.5" />
                     <span className="hidden sm:inline">Analytics</span>
                   </TabsTrigger>
                 </TabsList>
               </Tabs>
 
-              <Button onClick={() => setShowModal(true)}>
-                <Plus className="h-4 w-4 mr-2" />
+              <Button size="sm" onClick={() => setShowModal(true)}>
                 Add Task
               </Button>
             </div>

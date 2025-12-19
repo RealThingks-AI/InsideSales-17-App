@@ -55,23 +55,23 @@ const Accounts = () => {
             </div>
             <div className="flex items-center gap-2">
               {/* View Toggle */}
-              <div className="flex items-center gap-1 bg-muted rounded-lg p-1">
+              <div className="flex items-center gap-0.5 bg-muted rounded-md p-0.5">
                 <Button
                   variant={viewMode === 'table' ? 'secondary' : 'ghost'}
                   size="sm"
                   onClick={() => setViewMode('table')}
-                  className="gap-2"
+                  className="gap-1.5 h-8 px-2.5 text-xs"
                 >
-                  <List className="h-4 w-4" />
+                  <List className="h-3.5 w-3.5" />
                   List
                 </Button>
                 <Button
                   variant={viewMode === 'analytics' ? 'secondary' : 'ghost'}
                   size="sm"
                   onClick={() => setViewMode('analytics')}
-                  className="gap-2"
+                  className="gap-1.5 h-8 px-2.5 text-xs"
                 >
-                  <BarChart3 className="h-4 w-4" />
+                  <BarChart3 className="h-3.5 w-3.5" />
                   Analytics
                 </Button>
               </div>
