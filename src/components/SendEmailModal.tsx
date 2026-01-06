@@ -212,49 +212,17 @@ export const SendEmailModal = ({ open, onOpenChange, recipient, contactId, leadI
         throw new Error(data.error);
       }
 
-      // Log email to email_history table
-      try {
-        await supabase.from('email_history').insert({
-          recipient_email: emailRecipient.email,
-          recipient_name: emailRecipient.name,
-          subject: subject.trim(),
-          body: body.trim(),
-          sender_email: senderEmail,
-          sent_by: user?.id,
-          contact_id: contactId || null,
-          lead_id: leadId || null,
-          account_id: accountId || null,
-          status: 'sent',
-        });
-      } catch (historyError) {
-        console.error('Error logging email to history:', historyError);
-      }
-
-      // Update contact email tracking stats if contactId is provided
+      // Update last_contacted_at for the contact (email history is created by the edge function)
       if (contactId) {
         try {
-          // Get current stats
-          const { data: contactData } = await supabase
+          await supabase
             .from('contacts')
-            .select('email_opens, email_clicks, engagement_score')
-            .eq('id', contactId)
-            .single();
-
-          if (contactData) {
-            const newEmailOpens = (contactData.email_opens || 0) + 1;
-            const newEngagementScore = Math.min((contactData.engagement_score || 0) + 5, 100);
-
-            await supabase
-              .from('contacts')
-              .update({
-                email_opens: newEmailOpens,
-                engagement_score: newEngagementScore,
-                last_contacted_at: new Date().toISOString(),
-              })
-              .eq('id', contactId);
-          }
+            .update({
+              last_contacted_at: new Date().toISOString(),
+            })
+            .eq('id', contactId);
         } catch (updateError) {
-          console.error('Error updating contact email stats:', updateError);
+          console.error('Error updating contact last_contacted_at:', updateError);
         }
       }
 
